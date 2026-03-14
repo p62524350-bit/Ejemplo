@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roca Papel Tijeras Lagarto Spock</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+  <link rel="script.js" href="Script.js">
+</head>
+<body>
+
+<header>
+  <div class="pixel-title">ROCA · PAPEL · TIJERAS<br>LAGARTO · SPOCK</div>
+  <div class="pixel-sub">THE BIG BANG THEORY EDITION</div>
+</header>
+
+<div class="main-wrap">
+  <div class="row g-4">
+
+    <!-- JUEGO -->
+    <div class="col-lg-8">
+      <div class="game-card">
+
+        <!-- Arena -->
+        <div class="arena">
+          <div class="fighter">
+            <div class="fighter-name p1">— TÚ —</div>
+            <span class="fighter-emoji" id="eJugador">❓</span>
+          </div>
+          <div class="vs-circle">VS</div>
+          <div class="fighter">
+            <div class="fighter-name p2">Robot</div>
+            <span class="fighter-emoji" id="eCPU">🤖</span>
+          </div>
+        </div>
+
+        <!-- Resultado -->
+        <div class="resultado-box" id="resBox">
+          <div class="res-title idle" id="resTitle">ELIGE TU ARMA</div>
+          <div class="res-sub" id="resSub"></div>
+        </div>
+
+        <!-- Botones -->
+        <div class="choices-grid">
+          <button class="choice-btn" onclick="jugar('roca')">
+            <span class="ico">🪨</span><span class="lbl">ROCA</span>
+          </button>
+          <button class="choice-btn" onclick="jugar('papel')">
+            <span class="ico">📄</span><span class="lbl">PAPEL</span>
+          </button>
+          <button class="choice-btn" onclick="jugar('tijeras')">
+            <span class="ico">✂️</span><span class="lbl">TIJERAS</span>
+          </button>
+          <button class="choice-btn" onclick="jugar('lagarto')">
+            <span class="ico">🦎</span><span class="lbl">LAGARTO</span>
+          </button>
+          <button class="choice-btn" onclick="jugar('spock')">
+            <span class="ico">🖖</span><span class="lbl">SPOCK</span>
+          </button>
+        </div>
+
+        <!-- Marcador -->
+        <div class="scoreboard">
+          <div class="score-pill">
+            <span class="score-num w" id="sW">0</span>
+            <span class="score-lbl">Ganadas</span>
+          </div>
+          <div class="score-pill">
+            <span class="score-num t" id="sT">0</span>
+            <span class="score-lbl">Empates</span>
+          </div>
+          <div class="score-pill">
+            <span class="score-num l" id="sL">0</span>
+            <span class="score-lbl">Perdidas</span>
+          </div>
+          <button class="btn-reset" onclick="resetear()">
+            <span>⟳</span><span>RESET</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PANEL DERECHO — solo reglas -->
+    <div class="col-lg-4">
+      <div class="info-card">
+
+        <div class="info-section-title rules">🎮 REGLAS</div>
+
+        <div class="rule-row">
+          <span class="rule-ico">✂️</span>
+          <span class="rule-txt"><strong>Tijeras</strong> cortan <em>Papel</em> &amp; decapitan <em>Lagarto</em></span>
+        </div>
+        <div class="rule-row">
+          <span class="rule-ico">📄</span>
+          <span class="rule-txt"><strong>Papel</strong> cubre <em>Roca</em> &amp; refuta <em>Spock</em></span>
+        </div>
+        <div class="rule-row">
+          <span class="rule-ico">🪨</span>
+          <span class="rule-txt"><strong>Roca</strong> aplasta <em>Tijeras</em> &amp; aplasta <em>Lagarto</em></span>
+        </div>
+        <div class="rule-row">
+          <span class="rule-ico">🦎</span>
+          <span class="rule-txt"><strong>Lagarto</strong> envenena <em>Spock</em> &amp; come <em>Papel</em></span>
+        </div>
+        <div class="rule-row">
+          <span class="rule-ico">🖖</span>
+          <span class="rule-txt"><strong>Spock</strong> vaporiza <em>Roca</em> &amp; destroza <em>Tijeras</em></span>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- COUNTDOWN OVERLAY -->
+<div class="countdown-overlay" id="countdownOverlay">
+  <div style="text-align:center">
+    <span class="countdown-word roca-c"    id="cw1">🪨 ROCA...</span>
+    <span class="countdown-word papel-c"   id="cw2">📄 PAPEL...</span>
+    <span class="countdown-word tijeras-c" id="cw3">✂️ TIJERAS...</span>
+    <span class="countdown-word ya-c"      id="cw4">⚡ ¡YA!</span>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
